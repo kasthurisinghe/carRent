@@ -12,7 +12,7 @@ public class Launcher extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(this.getClass().getResource("/view/"));
+        Parent root = FXMLLoader.load(this.getClass().getResource("/view/carDetails.fxml"));
         Scene scene= new Scene(root);
 
         stage.setTitle("User Login Form");

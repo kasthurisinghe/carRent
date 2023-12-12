@@ -62,15 +62,15 @@ public class CreateUser {
         }
 
 
-        if(password2.equals(password2)){
+        if(password2.equals(oriPassword)&&(male.isSelected()|| female.isSelected())){
             if (mobile.length()==10 && (Integer.parseInt(mobile)>0)){
                 try {
                     Connection connection=DbConnection.getInstance().getConnection();
 
                     String sql="INSERT INTO admin_user VALUES(?,?,?,?,?,?)";
                     PreparedStatement pstm = connection.prepareStatement(sql);
-                    pstm.setString(1,userna);
-                    pstm.setString(2,id);
+                    pstm.setString(1,id);
+                    pstm.setString(2,userna);
                     pstm.setString(3,addr);
                     pstm.setString(4,mobile);
                     pstm.setString(5,md5Pass);
@@ -79,6 +79,8 @@ public class CreateUser {
                     boolean isSaved=pstm.executeUpdate()>0;
                     if (isSaved){
                         new Alert(Alert.AlertType.CONFIRMATION, "The user is saved").show();
+                        clearFields();
+                        msg.setText("");
                     }
                 } catch (SQLException e) {
                     new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
@@ -90,18 +92,27 @@ public class CreateUser {
             }
         }
         else {
-            msg.setText("The passwords you entered do not match. Please re-enter your password correctly.");
+            if (!password2.equals(oriPassword)) {
+                msg.setText("The passwords you entered do not match. Please re-enter your password correctly.");
+            }
+            else {
+                msg.setText("Select your gender.");
+            }
         }
-         phoneNumber.setText("");
-         UserId.setText("");
-         address.setText("");
-         userName.setText("");
-         password.setText("");
-         rePassword.setText("");
-         male.setSelected(false);
-         female.setSelected(false);
     }
-    public static String doHashing(String password) throws NoSuchAlgorithmException {
+    private void clearFields(){
+
+        phoneNumber.setText("");
+        UserId.setText("");
+        address.setText("");
+        userName.setText("");
+        password.setText("");
+        rePassword.setText("");
+        male.setSelected(false);
+        female.setSelected(false);
+    }
+
+    private static String doHashing(String password) throws NoSuchAlgorithmException {
         String hashValue;
 
 //            Initialize the MessageDigest object for MD5 hashing.

@@ -9,8 +9,15 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.db.DbConnection;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class UserLogin {
@@ -32,12 +39,12 @@ public class UserLogin {
     @FXML
     private PasswordField txtUserPassword;
 
-    public void btnLoginOnAction(ActionEvent actionEvent) throws  IOException{
+    public void btnLoginOnAction(ActionEvent actionEvent) throws IOException, SQLException, NoSuchAlgorithmException {
             notificationMessage.setText("");
             String userID = txtUserId.getText();
             String password=txtUserPassword.getText();
 
-            if ((userID.length()!=0)&&(password.length()!=0)){
+            if (checkUser(password,userID)){
                 Parent root= FXMLLoader.load(this.getClass().getResource("/view/mainMenu.fxml"));
 
                 Scene scene=new Scene(root);
@@ -55,6 +62,7 @@ public class UserLogin {
                 setNotification();
             }
             txtUserId.setText("");
+            txtUserPassword.setText("");
     }
 
     public  void setNotification(){
@@ -70,5 +78,53 @@ public class UserLogin {
         stage.setTitle("Create User Account");
         stage.centerOnScreen();
 
+    }
+    private boolean checkUser(String password, String userId) throws SQLException, NoSuchAlgorithmException {
+        String pw1=doHashing(password);
+
+        Connection connection= DbConnection.getInstance().getConnection();
+
+        String sql="SELECT*FROM admin_user WHERE ID=?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,userId);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next() ){
+            String id=resultSet.getString(1);
+            String pw=resultSet.getString(5);
+
+            if (userId.equals(id)&& pw.equals(pw1)){
+                return true;
+            }
+            return false;
+
+        }
+        else {
+            new Alert(Alert.AlertType.INFORMATION,"The user ID "+userId+" doesnt exist").show();
+            return false;
+        }
+    }
+
+    private static String doHashing(String password) throws NoSuchAlgorithmException {
+        String hashValue;
+
+//            Initialize the MessageDigest object for MD5 hashing.
+        MessageDigest md = MessageDigest.getInstance("MD5");
+
+//            Input the data you want to hash into a byte array.
+        String originalString = password;
+        byte[] bytesOfMessage = originalString.getBytes();
+
+//            Use the digest method to perform the hashing.
+        byte[] digest = md.digest(bytesOfMessage);
+
+//            Finally, convert the byte array to a hexadecimal String.
+        StringBuilder sb = new StringBuilder();
+        for (byte b : digest) {
+            sb.append(String.format("%02x", b));
+        }
+        hashValue = sb.toString();
+
+        return hashValue;
     }
 }

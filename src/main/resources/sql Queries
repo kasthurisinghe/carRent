@@ -1,0 +1,8 @@
+create table admin_user(
+    user_name varchar (100) not null,
+    ID varchar (15) primary key,
+    address varchar (100)not null,
+    Phone_number varchar (15)not null,
+    password varchar (225) not null,
+    gender varchar (225)not null
+);

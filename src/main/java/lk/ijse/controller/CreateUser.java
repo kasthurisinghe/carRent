@@ -10,14 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.db.DbConnection;
-import lk.ijse.dto.UserDto;
-import lk.ijse.modle.UserModel;
+import lk.ijse.dto.CreateUserDto;
+import lk.ijse.modle.CreateUserModel;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -69,11 +65,11 @@ public class CreateUser {
         if(password2.equals(oriPassword)&&(male.isSelected()|| female.isSelected())){
             if (mobile.length()==10 && (Integer.parseInt(mobile)>0)){
 
-                UserDto userDto=new UserDto(id,userna,addr,mobile,md5Pass,gender);
+                CreateUserDto createUserDto =new CreateUserDto(id,userna,addr,mobile,md5Pass,gender);
 
                 try {
 
-                    boolean isSaved=UserModel.save(id,userna,addr,mobile,md5Pass,gender);
+                    boolean isSaved= CreateUserModel.save(id,userna,addr,mobile,md5Pass,gender);
 
                     if (isSaved){
                         new Alert(Alert.AlertType.CONFIRMATION, "The user is saved").show();
@@ -101,17 +97,17 @@ public class CreateUser {
     }
     public void txtClickOnId(ActionEvent actionEvent) throws SQLException, NoSuchAlgorithmException {
         String id=UserId.getText();
-        UserDto userDto=UserModel.findUser(id);
+        CreateUserDto createUserDto = CreateUserModel.findUser(id);
 
-        if (userDto!=null ){
-            userName.setText(userDto.getUserna());
-            UserId.setText(userDto.getId());
-            address.setText(userDto.getAddr());
-            phoneNumber.setText(userDto.getMobile());
+        if (createUserDto !=null ){
+            userName.setText(createUserDto.getUserna());
+            UserId.setText(createUserDto.getId());
+            address.setText(createUserDto.getAddr());
+            phoneNumber.setText(createUserDto.getMobile());
 
             msg.setText("Passwords cannot be exposed.");
 
-            if (userDto.getGender().equals("Male")){
+            if (createUserDto.getGender().equals("Male")){
                 male.setSelected(true);
             }else {
                 female.setSelected(true);
@@ -123,7 +119,7 @@ public class CreateUser {
     }
     public void btnDeleteClickOnAction(ActionEvent actionEvent) throws SQLException {
         String id =UserId.getText();
-        boolean isDeleted=UserModel.deleteUser(id);
+        boolean isDeleted= CreateUserModel.deleteUser(id);
 
         if (isDeleted){
             new Alert(Alert.AlertType.CONFIRMATION,"User deleted").show();

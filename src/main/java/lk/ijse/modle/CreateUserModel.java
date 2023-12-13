@@ -1,7 +1,7 @@
 package lk.ijse.modle;
 
 import lk.ijse.db.DbConnection;
-import lk.ijse.dto.UserDto;
+import lk.ijse.dto.CreateUserDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-public class UserModel {
+public class CreateUserModel {
     public static boolean save(String id, String userna, String addr, String mobile, String md5Pass, String gender) throws SQLException {
 
         String sql="INSERT INTO admin_user VALUES(?,?,?,?,?,?)";
@@ -27,7 +27,7 @@ public class UserModel {
         return pstm.executeUpdate()>0;
     }
 
-    public static UserDto findUser(String id) throws SQLException {
+    public static CreateUserDto findUser(String id) throws SQLException {
         Connection connection=DbConnection.getInstance().getConnection();
 
         String sql="SELECT*FROM admin_user where id=?";
@@ -44,8 +44,8 @@ public class UserModel {
             String password=resultSet.getString(5);
             String gend=resultSet.getString(6);
 
-            UserDto userDto=new UserDto(idDb,uName,address,phone,password,gend);
-            return userDto;
+            CreateUserDto createUserDto =new CreateUserDto(idDb,uName,address,phone,password,gend);
+            return createUserDto;
         }
         return null;
     }

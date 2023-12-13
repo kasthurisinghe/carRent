@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class UserDto {
+public class CreateUserDto {
 
     private String id;
     private String userna;

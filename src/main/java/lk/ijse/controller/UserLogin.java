@@ -10,6 +10,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
+import lk.ijse.dto.UserLoginDto;
+import lk.ijse.modle.UserLoginModle;
 
 import java.io.IOException;
 import java.security.MessageDigest;
@@ -82,25 +84,13 @@ public class UserLogin {
     private boolean checkUser(String password, String userId) throws SQLException, NoSuchAlgorithmException {
         String pw1=doHashing(password);
 
-        Connection connection= DbConnection.getInstance().getConnection();
+        UserLoginDto userLoginDto=new UserLoginDto(userId,pw1);
 
-        String sql="SELECT*FROM admin_user WHERE ID=?";
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        pstm.setString(1,userId);
-        ResultSet resultSet = pstm.executeQuery();
-
-        if (resultSet.next() ){
-            String id=resultSet.getString(1);
-            String pw=resultSet.getString(5);
-
-            if (userId.equals(id)&& pw.equals(pw1)){
-                return true;
-            }
-            return false;
-
+        boolean isThere=UserLoginModle.findUser(userLoginDto);
+        if (isThere){
+            return true;
         }
         else {
-            new Alert(Alert.AlertType.INFORMATION,"The user ID "+userId+" doesnt exist").show();
             return false;
         }
     }

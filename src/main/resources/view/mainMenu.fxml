@@ -16,7 +16,7 @@
             <Font name="System Italic" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="exitBtn" layoutX="14.0" layoutY="404.0" minWidth="53.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="53.0" style="-fx-background-color: #f00528; -fx-background-radius: 20px;" text="Exit" textFill="WHITE">
+      <Button fx:id="exitBtn" layoutX="14.0" layoutY="404.0" minWidth="53.0" mnemonicParsing="false" onAction="#btnExitClickOnAction" prefHeight="31.0" prefWidth="53.0" style="-fx-background-color: #f00528; -fx-background-radius: 20px;" text="Exit" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

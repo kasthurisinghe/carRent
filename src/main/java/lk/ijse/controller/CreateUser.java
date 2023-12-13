@@ -11,11 +11,15 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
+import lk.ijse.dto.UserDto;
+import lk.ijse.modle.UserModel;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 public class CreateUser {
     public Button deleteUserbtn;
@@ -54,6 +58,7 @@ public class CreateUser {
         String md5Pass=doHashing(oriPassword);
         String password2=rePassword.getText();
         String gender;
+
         if(male.isSelected()){
              gender=male.getText();
         }
@@ -61,27 +66,21 @@ public class CreateUser {
             gender=female.getText();
         }
 
-
         if(password2.equals(oriPassword)&&(male.isSelected()|| female.isSelected())){
             if (mobile.length()==10 && (Integer.parseInt(mobile)>0)){
+
+                UserDto userDto=new UserDto(id,userna,addr,mobile,md5Pass,gender);
+
                 try {
-                    Connection connection=DbConnection.getInstance().getConnection();
 
-                    String sql="INSERT INTO admin_user VALUES(?,?,?,?,?,?)";
-                    PreparedStatement pstm = connection.prepareStatement(sql);
-                    pstm.setString(1,id);
-                    pstm.setString(2,userna);
-                    pstm.setString(3,addr);
-                    pstm.setString(4,mobile);
-                    pstm.setString(5,md5Pass);
-                    pstm.setString(6,gender);
+                    boolean isSaved=UserModel.save(id,userna,addr,mobile,md5Pass,gender);
 
-                    boolean isSaved=pstm.executeUpdate()>0;
                     if (isSaved){
                         new Alert(Alert.AlertType.CONFIRMATION, "The user is saved").show();
                         clearFields();
                         msg.setText("");
                     }
+
                 } catch (SQLException e) {
                     new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
                 }
@@ -100,6 +99,40 @@ public class CreateUser {
             }
         }
     }
+    public void txtClickOnId(ActionEvent actionEvent) throws SQLException, NoSuchAlgorithmException {
+        String id=UserId.getText();
+        UserDto userDto=UserModel.findUser(id);
+
+        if (userDto!=null ){
+            userName.setText(userDto.getUserna());
+            UserId.setText(userDto.getId());
+            address.setText(userDto.getAddr());
+            phoneNumber.setText(userDto.getMobile());
+
+            msg.setText("Passwords cannot be exposed.");
+
+            if (userDto.getGender().equals("Male")){
+                male.setSelected(true);
+            }else {
+                female.setSelected(true);
+            }
+        }
+        else {
+            new Alert(Alert.AlertType.INFORMATION,"The user ID "+id+" doesnt exist").show();
+        }
+    }
+    public void btnDeleteClickOnAction(ActionEvent actionEvent) throws SQLException {
+        String id =UserId.getText();
+        boolean isDeleted=UserModel.deleteUser(id);
+
+        if (isDeleted){
+            new Alert(Alert.AlertType.CONFIRMATION,"User deleted").show();
+        }
+        else {
+            new Alert(Alert.AlertType.INFORMATION,"No registered users currently exist.").show();
+        }
+        clearFields();
+    }
     private void clearFields(){
 
         phoneNumber.setText("");
@@ -110,6 +143,7 @@ public class CreateUser {
         rePassword.setText("");
         male.setSelected(false);
         female.setSelected(false);
+        msg.setText("");
     }
 
     private static String doHashing(String password) throws NoSuchAlgorithmException {
@@ -134,4 +168,5 @@ public class CreateUser {
 
         return hashValue;
     }
+
 }

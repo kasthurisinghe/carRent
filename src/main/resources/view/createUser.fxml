@@ -45,7 +45,7 @@
             <PasswordField fx:id="rePassword" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <TextField fx:id="userName" GridPane.columnIndex="1" />
             <TextField fx:id="address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="UserId" GridPane.columnIndex="3" />
+            <TextField fx:id="UserId" onAction="#txtClickOnId" GridPane.columnIndex="3" />
             <TextField fx:id="phoneNumber" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Label text="Gender" GridPane.rowIndex="3" />
             <RadioButton fx:id="male" alignment="CENTER_RIGHT" mnemonicParsing="false" text="Male" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -65,10 +65,8 @@
             <Image url="@../car-rental-vector-13423582.jpg" />
          </image>
       </ImageView>
-      <GridPane layoutX="264.0" layoutY="191.0" prefHeight="25.0" prefWidth="327.0">
+      <GridPane layoutX="406.0" layoutY="191.0" prefHeight="25.0" prefWidth="185.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="77.66668701171875" minWidth="10.0" prefWidth="77.66668701171875" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="76.33331298828125" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.3333740234375" minWidth="10.0" prefWidth="79.3333740234375" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.6666259765625" minWidth="10.0" prefWidth="96.6666259765625" />
         </columnConstraints>
@@ -76,22 +74,14 @@
           <RowConstraints />
         </rowConstraints>
          <children>
-            <Button fx:id="createUserBtn" mnemonicParsing="false" onAction="#btnCreateUserClockOnAction" prefHeight="19.0" prefWidth="91.0" style="-fx-background-color: #450105;" text="Create User" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+            <Button fx:id="createUserBtn" mnemonicParsing="false" onAction="#btnCreateUserClockOnAction" prefHeight="19.0" prefWidth="91.0" style="-fx-background-color: #450105;" text="Create User" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="updateUserbtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #013e45;" text="Update" textFill="WHITE" GridPane.columnIndex="2">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="deleteUserbtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #45013a;" text="Delete" textFill="WHITE" GridPane.columnIndex="1">
+            <Button fx:id="deleteUserbtn" mnemonicParsing="false" onAction="#btnDeleteClickOnAction" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #45013a;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -109,7 +99,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label fx:id="msg" layoutX="70.0" layoutY="156.0" prefHeight="32.0" prefWidth="524.0" textFill="RED">
+      <Label fx:id="msg" layoutX="70.0" layoutY="156.0" prefHeight="20.0" prefWidth="524.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font name="SansSerif Regular" size="8.0" />
          </font>

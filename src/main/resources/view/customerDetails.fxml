@@ -43,7 +43,7 @@
             <TextField fx:id="txtCustomerAddress" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtCustomerNic" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Label text="Customer ID" GridPane.columnIndex="2" />
-            <TextField fx:id="txtCstId" onAction="#txtIdClickOnAction" GridPane.columnIndex="3" />
+            <TextField fx:id="txtCstId" GridPane.columnIndex="3" />
          </children>
       </GridPane>
       <TableView layoutX="4.0" layoutY="176.0" prefHeight="215.0" prefWidth="591.0">

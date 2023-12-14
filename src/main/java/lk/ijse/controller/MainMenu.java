@@ -27,6 +27,15 @@ public class MainMenu {
         this.rootNode1.getChildren().add(rootnode);
     }
 
-    public void btnVehicleRegistryClickOnAction(ActionEvent actionEvent) {
+    public void btnVehicleRegistryClickOnAction(ActionEvent actionEvent) throws IOException {
+        Parent rootnode = FXMLLoader.load(this.getClass().getResource("/view/carDetails.fxml"));
+        this.rootNode1.getChildren().clear();
+        this.rootNode1.getChildren().add(rootnode);
+    }
+
+    public void btnBookingClickOnAction(ActionEvent actionEvent) throws IOException {
+        Parent rootnode = FXMLLoader.load(this.getClass().getResource("/view/bookingDetails.fxml"));
+        this.rootNode1.getChildren().clear();
+        this.rootNode1.getChildren().add(rootnode);
     }
 }

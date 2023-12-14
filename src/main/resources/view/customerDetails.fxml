@@ -14,52 +14,53 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerDetails">
+<AnchorPane prefHeight="395.0" prefWidth="600.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerDetails">
    <children>
       <Label layoutX="3.0" layoutY="1.0" prefHeight="25.0" prefWidth="116.0" text="Customer Details">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <GridPane layoutX="12.0" layoutY="34.0" prefHeight="93.0" prefWidth="576.0">
+      <GridPane layoutX="12.0" layoutY="34.0" prefHeight="85.0" prefWidth="576.0">
         <columnConstraints>
           <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="140.66668701171875" minWidth="10.0" prefWidth="97.66666666666667" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.33331298828125" minWidth="10.0" prefWidth="203.0" />
-            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="125.3333740234375" minWidth="10.0" prefWidth="53.000020345052064" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.33331298828125" minWidth="10.0" prefWidth="176.33333333333337" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="125.3333740234375" minWidth="10.0" prefWidth="79.33333333333331" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.3333129882813" minWidth="10.0" prefWidth="223.3333129882813" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="Customer Name" />
-            <Label text="Mobile Number" GridPane.rowIndex="1" />
-            <Label text="Address" GridPane.columnIndex="2" />
+            <Label text="Mobile Number" GridPane.rowIndex="2" />
+            <Label text="Address" GridPane.rowIndex="1" />
             <Label text="NIC No." GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <TextField fx:id="txtCustomerName" style="-fx-border-style: none;" GridPane.columnIndex="1" />
-            <TextField fx:id="txtCustomerMobile" promptText="XXX-XXX X XXX" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtCustomerAddress" GridPane.columnIndex="3" />
+            <TextField fx:id="txtCustomerMobile" promptText="XXX-XXX X XXX" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtCustomerAddress" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtCustomerNic" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label text="Rate of the Rental" GridPane.rowIndex="2" />
-            <TextField fx:id="txtRental" promptText="Rental per Day" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label text="Days" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField fx:id="txtDays" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="Customer ID" GridPane.columnIndex="2" />
+            <TextField fx:id="txtCstId" onAction="#txtIdClickOnAction" GridPane.columnIndex="3" />
          </children>
       </GridPane>
-      <TableView layoutX="13.0" layoutY="191.0" prefHeight="200.0" prefWidth="576.0">
+      <TableView layoutX="4.0" layoutY="176.0" prefHeight="215.0" prefWidth="591.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="108.6666259765625" text="Customer Name" />
+          <TableColumn prefWidth="88.66671752929688" text="Address" />
+            <TableColumn prefWidth="89.33328247070312" text="Mobile" />
+            <TableColumn prefWidth="133.33331298828125" text="NIC" />
+            <TableColumn prefWidth="156.6666259765625" text="Rented Vehicles" />
         </columns>
       </TableView>
-      <ImageView blendMode="MULTIPLY" fitHeight="147.0" fitWidth="347.0" layoutX="56.0" layoutY="235.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
+      <ImageView blendMode="MULTIPLY" fitHeight="171.0" fitWidth="422.0" layoutX="56.0" layoutY="211.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../car-rental-vector-13423582.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="createCustomerBtn" layoutX="476.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnCreateCustomerClickOnAction" style="-fx-background-color: #450105; -fx-background-radius: 20px;" text="Create Customer" textFill="WHITE">
+      <Button fx:id="createCustomerBtn" layoutX="474.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnCreateCustomerClickOnAction" style="-fx-background-color: #450105; -fx-background-radius: 20px;" text="Create Customer" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -67,7 +68,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="findCustomerbtn" layoutX="371.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnFindCustomerClickOnAction" style="-fx-background-color: #014513; -fx-background-radius: 20px;" text="Find Customer" textFill="#f8f8f8">
+      <Button fx:id="findCustomerbtn" layoutX="369.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnFindCustomerClickOnAction" style="-fx-background-color: #014513; -fx-background-radius: 20px;" text="Find Customer" textFill="#f8f8f8">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -75,7 +76,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="updateCustomerbtn" layoutX="307.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnUpdateClickOnAction" style="-fx-background-color: #013e45; -fx-background-radius: 20px;" text="Update" textFill="WHITE">
+      <Button fx:id="updateCustomerbtn" layoutX="305.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnUpdateClickOnAction" style="-fx-background-color: #013e45; -fx-background-radius: 20px;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -83,7 +84,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="deleteCustomerbtn" layoutX="244.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnDeleteClickOnAction" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: #45013a; -fx-background-radius: 20px;" text="Delete" textFill="WHITE">
+      <Button fx:id="deleteCustomerbtn" layoutX="242.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnDeleteClickOnAction" prefHeight="15.0" prefWidth="55.0" style="-fx-background-color: #45013a; -fx-background-radius: 20px;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -91,8 +92,8 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="11.0" layoutY="159.0" prefHeight="25.0" prefWidth="81.0" text="Rental History :" />
-      <Label fx:id="notifyMessage" layoutX="312.0" layoutY="127.0" prefHeight="25.0" prefWidth="277.0" wrapText="true">
+      <Label layoutX="12.0" layoutY="155.0" prefHeight="25.0" prefWidth="81.0" text="Rental History :" />
+      <Label fx:id="notifyMessage" layoutX="29.0" layoutY="126.0" prefHeight="17.0" prefWidth="555.0" textFill="#ff0101" wrapText="true">
          <font>
             <Font name="SansSerif Regular" size="8.0" />
          </font>

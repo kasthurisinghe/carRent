@@ -46,13 +46,14 @@
             <TextField fx:id="txtCstId" GridPane.columnIndex="3" />
          </children>
       </GridPane>
-      <TableView layoutX="4.0" layoutY="176.0" prefHeight="215.0" prefWidth="591.0">
+      <TableView fx:id="tblCustomer" layoutX="4.0" layoutY="176.0" prefHeight="215.0" prefWidth="591.0">
         <columns>
-          <TableColumn prefWidth="108.6666259765625" text="Customer Name" />
-          <TableColumn prefWidth="88.66671752929688" text="Address" />
-            <TableColumn prefWidth="89.33328247070312" text="Mobile" />
-            <TableColumn prefWidth="133.33331298828125" text="NIC" />
-            <TableColumn prefWidth="156.6666259765625" text="Rented Vehicles" />
+            <TableColumn fx:id="colCustomerId" prefWidth="108.6666259765625" text="Customer ID" />
+          <TableColumn fx:id="colCustomername" prefWidth="108.6666259765625" text="Customer Name" />
+            <TableColumn fx:id="colMobile" prefWidth="89.33328247070312" text="Mobile" />
+          <TableColumn fx:id="colAddress" prefWidth="88.66671752929688" text="Address" />
+            <TableColumn fx:id="colNic" prefWidth="90.0" text="NIC" />
+            <TableColumn fx:id="colRented" prefWidth="104.00002034505212" text="Rented Vehicles" />
         </columns>
       </TableView>
       <ImageView blendMode="MULTIPLY" fitHeight="171.0" fitWidth="422.0" layoutX="56.0" layoutY="211.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">

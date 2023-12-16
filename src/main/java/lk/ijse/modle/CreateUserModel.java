@@ -10,19 +10,19 @@ import java.sql.SQLException;
 
 
 public class CreateUserModel {
-    public static boolean save(String id, String userna, String addr, String mobile, String md5Pass, String gender) throws SQLException {
+    public static boolean save(CreateUserDto createUserDto) throws SQLException {
 
         String sql="INSERT INTO admin_user VALUES(?,?,?,?,?,?)";
 
         Connection connection= DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
 
-        pstm.setString(1,id);
-        pstm.setString(2,userna);
-        pstm.setString(3,addr);
-        pstm.setString(4,mobile);
-        pstm.setString(5,md5Pass);
-        pstm.setString(6,gender);
+        pstm.setString(1, createUserDto.getId());
+        pstm.setString(2, createUserDto.getUserna());
+        pstm.setString(3, createUserDto.getAddr());
+        pstm.setString(4, createUserDto.getMobile());
+        pstm.setString(5, createUserDto.getMd5Pass());
+        pstm.setString(6, createUserDto.getGender());
 
         return pstm.executeUpdate()>0;
     }

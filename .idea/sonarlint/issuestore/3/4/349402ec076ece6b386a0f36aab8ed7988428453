@@ -1,0 +1,26 @@
+
+w
+java:S1104"UMake rentalBtn a static final constant or non-public and provide accessors if needed.(ƒ‰Æÿÿÿÿÿ8ãı²†Ç1
+s
+java:S1104"VMake cutomerBtn a static final constant or non-public and provide accessors if needed.(€ÅÍÃ8äı²†Ç1
+s
+java:S1104"VMake vehicleBtn a static final constant or non-public and provide accessors if needed.(¶£¸¼8äı²†Ç1
+w
+java:S1104"UMake rootNode1 a static final constant or non-public and provide accessors if needed.(¸–ÏŠùÿÿÿÿ8åı²†Ç1
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(şÏÇÄ8Ìş²†Ç1
+
+java:S1186."€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ù‡§«8Ìş²†Ç1
+O
+java:S1172"2Remove this unused method parameter "actionEvent".(‚Şñë8×ş²†Ç1
+N
+java:S1172"2Remove this unused method parameter "actionEvent".(”ªÂ&8Øş²†Ç1
+T
+java:S1172""2Remove this unused method parameter "actionEvent".(ËèºÁıÿÿÿÿ8Üş²†Ç1
+T
+java:S1172("2Remove this unused method parameter "actionEvent".(õ£÷Ãûÿÿÿÿ8ßş²†Ç1
+L
+java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²8âş²†Ç1
+Q
+java:S1128
+"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8âş²†Ç1

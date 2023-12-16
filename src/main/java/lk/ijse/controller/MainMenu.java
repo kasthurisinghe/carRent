@@ -17,6 +17,10 @@ public class MainMenu {
     public Button vehicleBtn;
     public AnchorPane rootNode1;
 
+    public void  loadAllRentals(){
+
+    }
+
     public void btnExitClickOnAction(ActionEvent actionEvent) {
         Platform.exit();
     }
@@ -37,5 +41,9 @@ public class MainMenu {
         Parent rootnode = FXMLLoader.load(this.getClass().getResource("/view/bookingDetails.fxml"));
         this.rootNode1.getChildren().clear();
         this.rootNode1.getChildren().add(rootnode);
+    }
+
+    public void btnClickOnAllRental(ActionEvent actionEvent) {
+
     }
 }

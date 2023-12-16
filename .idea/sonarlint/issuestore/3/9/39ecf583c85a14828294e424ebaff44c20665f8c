@@ -1,0 +1,15 @@
+
+O
+java:S1172,"2Remove this unused method parameter "actionEvent".(Û®á¿8ÅáŒ’Æ1
+N
+java:S1172J"1Remove this unused method parameter "mouseEvent".(Œíâ×8ÒáŒ’Æ1
+^
+java:S1126Z"AReplace this if-then-else statement by a single return statement.(ßÍï¤8…ª—’Æ1
+V
+java:S1128"4Remove this unused import 'lk.ijse.db.DbConnection'.(¨š‰ ùÿÿÿÿ8¬Ç¨’Æ1
+M
+java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8¬Ç¨’Æ1
+Y
+java:S1128"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8¬Ç¨’Æ1
+K
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8¬Ç¨’Æ1

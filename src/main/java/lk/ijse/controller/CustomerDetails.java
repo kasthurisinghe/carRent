@@ -1,14 +1,15 @@
 package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import lk.ijse.db.DbConnection;
 import lk.ijse.dto.CreateCustomerDto;
+import lk.ijse.dto.tm.CreateCustomertm;
 import lk.ijse.modle.CreateCustomerModle;
 
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerDetails {
     public Button createCustomerBtn;
@@ -22,6 +23,46 @@ public class CustomerDetails {
     public TextField txtCustomerNic;
     public TextField txtCstId;
     public Label notifyMessage;
+    public TableView <CreateCustomertm>tblCustomer;
+    public TableColumn colCustomername;
+    public TableColumn colAddress;
+    public TableColumn colMobile;
+    public TableColumn colNic;
+    public TableColumn colRented;
+    public TableColumn colCustomerId;
+
+    public  void  initialize() throws SQLException {
+//        loadAllCustomers();
+    }
+
+//    private void loadAllCustomers() throws SQLException {
+//        Connection connection= DbConnection.getInstance().getConnection();
+//
+//        String sql="SELECT * FROM customer";
+//        Statement stm = connection.createStatement();
+////        Statement: It is used when you want to use SQL statements many times. The PreparedStatement interface accepts input parameters at runtime.
+////PreparedStatement: It is used for accessing your database. Statement interface cannot accept parameters and useful when you are using static SQL statements at runtime. If you want to run SQL query only once then this interface is preferred over PreparedStatement.
+//        ResultSet resultSet=stm.executeQuery(sql);
+//        List<CreateCustomerModle> customerList=new ArrayList<>();
+//
+//
+//
+////        while (resultSet.next()){
+////            String id=resultSet.getString(1);
+////            String name=resultSet.getString(2);
+////            String mobile=resultSet.getString(3);
+////            String address=resultSet.getString(4);
+////            String nic=resultSet.getString(5);
+////
+////            String sql1="SELECT * FROM customer";
+////            Statement stm = connection.createStatement();
+////
+////            String rented=
+////
+////            new CreateCustomertm(id,name,mobile,address,nic,rented);
+//        }
+//
+//    }
 
     public void btnCreateCustomerClickOnAction(ActionEvent actionEvent) throws SQLException {
         try {

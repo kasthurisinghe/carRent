@@ -69,7 +69,7 @@ public class CreateUser {
 
                 try {
 
-                    boolean isSaved= CreateUserModel.save(id,userna,addr,mobile,md5Pass,gender);
+                    boolean isSaved= CreateUserModel.save(createUserDto);
 
                     if (isSaved){
                         new Alert(Alert.AlertType.CONFIRMATION, "The user is saved").show();

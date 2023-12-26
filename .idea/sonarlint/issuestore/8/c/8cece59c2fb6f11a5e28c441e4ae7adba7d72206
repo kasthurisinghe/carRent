@@ -1,65 +1,67 @@
 
 L
-java:S3740"/Provide the parametrized type for this generic.(ŞŞ¡»8÷ö™ßÆ1
+java:S3740"/Provide the parametrized type for this generic.(ŞŞ¡»8“‚Ú£Ê1
 L
-java:S3740"/Provide the parametrized type for this generic.(¯ÿı°8øö™ßÆ1
+java:S3740"/Provide the parametrized type for this generic.(¯ÿı°8“‚Ú£Ê1
 Q
-java:S3740"/Provide the parametrized type for this generic.(ëŠ–ìÿÿÿÿÿ8øö™ßÆ1
+java:S3740"/Provide the parametrized type for this generic.(ëŠ–ìÿÿÿÿÿ8“‚Ú£Ê1
 L
-java:S3740"/Provide the parametrized type for this generic.(«ÍŞí8øö™ßÆ1
+java:S3740"/Provide the parametrized type for this generic.(«ÍŞí8“‚Ú£Ê1
 Q
-java:S3740"/Provide the parametrized type for this generic.(¯Ÿ™Îüÿÿÿÿ8øö™ßÆ1
+java:S3740 "/Provide the parametrized type for this generic.(¯Ÿ™Îüÿÿÿÿ8“‚Ú£Ê1
 L
-java:S3740 "/Provide the parametrized type for this generic.(ì¬ƒ8øö™ßÆ1
+java:S3740!"/Provide the parametrized type for this generic.(ì¬ƒ8“‚Ú£Ê1
 z
-java:S1104"]Make createCustomerBtn a static final constant or non-public and provide accessors if needed.(åãŒø8úö™ßÆ1
+java:S1104"]Make createCustomerBtn a static final constant or non-public and provide accessors if needed.(åãŒø8”‚Ú£Ê1
 |
-java:S1104"_Make mainMenuCustomerbtn a static final constant or non-public and provide accessors if needed.(ùìé…8üö™ßÆ1
+java:S1104"_Make mainMenuCustomerbtn a static final constant or non-public and provide accessors if needed.(ùìé…8”‚Ú£Ê1
 x
-java:S1104"[Make findCustomerbtn a static final constant or non-public and provide accessors if needed.(Ü·†‹8üö™ßÆ1
+java:S1104"[Make findCustomerbtn a static final constant or non-public and provide accessors if needed.(Ü·†‹8”‚Ú£Ê1
 
-java:S1104"]Make updateCustomerbtn a static final constant or non-public and provide accessors if needed.(–®«ÿÿÿÿÿ8üö™ßÆ1
+java:S1104"]Make updateCustomerbtn a static final constant or non-public and provide accessors if needed.(–®«ÿÿÿÿÿ8”‚Ú£Ê1
 z
-java:S1104"]Make deleteCustomerbtn a static final constant or non-public and provide accessors if needed.(§ ±Å8üö™ßÆ1
+java:S1104"]Make deleteCustomerbtn a static final constant or non-public and provide accessors if needed.(§ ±Å8”‚Ú£Ê1
 w
-java:S1104"[Make txtCustomerName a static final constant or non-public and provide accessors if needed.(ß©Ÿ	8üö™ßÆ1
+java:S1104"[Make txtCustomerName a static final constant or non-public and provide accessors if needed.(ß©Ÿ	8”‚Ú£Ê1
 z
-java:S1104"]Make txtCustomerMobile a static final constant or non-public and provide accessors if needed.(®§• 8üö™ßÆ1
+java:S1104"]Make txtCustomerMobile a static final constant or non-public and provide accessors if needed.(®§• 8”‚Ú£Ê1
 €
-java:S1104"^Make txtCustomerAddress a static final constant or non-public and provide accessors if needed.(ğ¡÷®ÿÿÿÿÿ8üö™ßÆ1
+java:S1104"^Make txtCustomerAddress a static final constant or non-public and provide accessors if needed.(ğ¡÷®ÿÿÿÿÿ8”‚Ú£Ê1
 w
-java:S1104"ZMake txtCustomerNic a static final constant or non-public and provide accessors if needed.(Ùˆò8üö™ßÆ1
+java:S1104"ZMake txtCustomerNic a static final constant or non-public and provide accessors if needed.(Ùˆò8”‚Ú£Ê1
 v
-java:S1104"TMake txtCstId a static final constant or non-public and provide accessors if needed.(¬ÀŞÖùÿÿÿÿ8üö™ßÆ1
+java:S1104"TMake txtCstId a static final constant or non-public and provide accessors if needed.(¬ÀŞÖùÿÿÿÿ8”‚Ú£Ê1
 {
-java:S1104"YMake notifyMessage a static final constant or non-public and provide accessors if needed.(¥–³²øÿÿÿÿ8üö™ßÆ1
+java:S1104"YMake notifyMessage a static final constant or non-public and provide accessors if needed.(¥–³²øÿÿÿÿ8”‚Ú£Ê1
 y
-java:S1104"WMake tblCustomer a static final constant or non-public and provide accessors if needed.(é²ÅÆüÿÿÿÿ8üö™ßÆ1
+java:S1104"WMake tblCustomer a static final constant or non-public and provide accessors if needed.(é²ÅÆüÿÿÿÿ8”‚Ú£Ê1
 x
-java:S1104"[Make colCustomername a static final constant or non-public and provide accessors if needed.(ŞŞ¡»8üö™ßÆ1
+java:S1104"[Make colCustomername a static final constant or non-public and provide accessors if needed.(ŞŞ¡»8”‚Ú£Ê1
 s
-java:S1104"VMake colAddress a static final constant or non-public and provide accessors if needed.(¯ÿı°8üö™ßÆ1
+java:S1104"VMake colAddress a static final constant or non-public and provide accessors if needed.(¯ÿı°8”‚Ú£Ê1
 w
-java:S1104"UMake colMobile a static final constant or non-public and provide accessors if needed.(ëŠ–ìÿÿÿÿÿ8üö™ßÆ1
+java:S1104"UMake colMobile a static final constant or non-public and provide accessors if needed.(ëŠ–ìÿÿÿÿÿ8”‚Ú£Ê1
 o
-java:S1104"RMake colNic a static final constant or non-public and provide accessors if needed.(«ÍŞí8üö™ßÆ1
+java:S1104"RMake colNic a static final constant or non-public and provide accessors if needed.(«ÍŞí8”‚Ú£Ê1
 w
-java:S1104"UMake colRented a static final constant or non-public and provide accessors if needed.(¯Ÿ™Îüÿÿÿÿ8üö™ßÆ1
+java:S1104 "UMake colRented a static final constant or non-public and provide accessors if needed.(¯Ÿ™Îüÿÿÿÿ8”‚Ú£Ê1
 v
-java:S1104 "YMake colCustomerId a static final constant or non-public and provide accessors if needed.(ì¬ƒ8üö™ßÆ1
-X	java:S125#"<This block of commented-out lines of code should be removed.(„‰÷8€¼šßÆ1
+java:S1104!"YMake colCustomerId a static final constant or non-public and provide accessors if needed.(ì¬ƒ8”‚Ú£Ê1
+i
+java:S2095+"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8¹‚Ú£Ê1
+W
+java:S18547":Remove this useless assignment to local variable "gender".(Ÿµ…Ü8½‚Ú£Ê1
+H
+java:S14817"+Remove this unused "gender" local variable.(Ÿµ…Ü8¿‚Ú£Ê1
+G	java:S106="+Replace this use of System.out by a logger.(ê¾ú®8À‚Ú£Ê1
 O
-java:S1172C"2Remove this unused method parameter "actionEvent".(ø˜à£8µ÷™ßÆ1
-]	java:S125&"<This block of commented-out lines of code should be removed.(ÜÔŞşÿÿÿÿ8¹÷™ßÆ1
+java:S1172^"2Remove this unused method parameter "actionEvent".(ø˜à£8Á‚Ú£Ê1
+]	java:S125A"<This block of commented-out lines of code should be removed.(ÜÔŞşÿÿÿÿ8Á‚Ú£Ê1
 O
-java:S1172X"2Remove this unused method parameter "actionEvent".(§—ñ8Â÷™ßÆ1
-O
-java:S1172k"2Remove this unused method parameter "actionEvent".(Ó˜ñá8È÷™ßÆ1
-T
-java:S1172w"2Remove this unused method parameter "actionEvent".(°‹ÿéùÿÿÿÿ8Ë÷™ßÆ1
-V
-java:S1128"4Remove this unused import 'lk.ijse.db.DbConnection'.(¨š‰ ùÿÿÿÿ8 ¿›ßÆ1
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¡¿›ßÆ1
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¡¿›ßÆ1
+java:S1172s"2Remove this unused method parameter "actionEvent".(§—ñ8Ã‚Ú£Ê1
+P
+java:S1172†"2Remove this unused method parameter "actionEvent".(Ó˜ñá8Å‚Ú£Ê1
+U
+java:S1172’"2Remove this unused method parameter "actionEvent".(°‹ÿéùÿÿÿÿ8Æ‚Ú£Ê1
+R
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8Ç‚Ú£Ê1

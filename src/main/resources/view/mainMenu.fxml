@@ -79,9 +79,9 @@
               <columns>
                 <TableColumn fx:id="CustId" prefWidth="118.22215270996094" text="Cust; ID" />
                 <TableColumn fx:id="VehiId" prefWidth="121.33335876464844" text="Vehicle ID" />
-                  <TableColumn fx:id="totalPrice" prefWidth="119.33331298828125" text="Total Price" />
-                  <TableColumn fx:id="duedate" prefWidth="131.77783203125" text="Due Date" />
-                  <TableColumn fx:id="overDue" prefWidth="112.22216796875" text="Over Due?" />
+                  <TableColumn prefWidth="119.33331298828125" text="Toral Price" />
+                  <TableColumn prefWidth="131.77783203125" text="Due Date" />
+                  <TableColumn prefWidth="112.22216796875" text="Over Due?" />
                   <TableColumn minWidth="0.0" prefWidth="0.0" />
               </columns>
             </TableView>

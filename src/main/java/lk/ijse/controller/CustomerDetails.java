@@ -8,6 +8,7 @@ import lk.ijse.dto.tm.CreateCustomertm;
 import lk.ijse.modle.CreateCustomerModle;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +33,33 @@ public class CustomerDetails {
     public TableColumn colCustomerId;
 
     public  void  initialize() throws SQLException {
-//        loadAllCustomers();
+        loadAllCustomers();
+    }
+
+    private void loadAllCustomers() throws SQLException {
+        Connection connection=DbConnection.getInstance().getConnection();
+
+        String sql="SELECT*FROM customer";
+        Statement statement=connection.createStatement();
+
+        ResultSet resultSet=statement.executeQuery(sql);
+
+        List<CreateCustomerDto> customerList=new ArrayList<>();
+
+        while (resultSet.next()){
+            String customerId= resultSet.getString(1);
+            String customerName= resultSet.getString(2);
+            String add= resultSet.getString(3);
+            String nic= resultSet.getString(4);
+            String phone= resultSet.getString(5);
+            String gender= resultSet.getString(6);
+            CreateCustomerDto createCustomerDto=new CreateCustomerDto(customerId,customerName,add,nic,phone);
+
+            customerList.add(createCustomerDto);
+        }
+        for (CreateCustomerDto customer:customerList){
+            System.out.println(customer);
+        }
     }
 
 //    private void loadAllCustomers() throws SQLException {

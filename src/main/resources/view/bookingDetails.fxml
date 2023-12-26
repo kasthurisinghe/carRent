@@ -72,11 +72,11 @@
             <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="39.0" text="Car ID" />
             <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="69.0" text="Customer ID" GridPane.rowIndex="1" />
             <Label contentDisplay="RIGHT" prefHeight="17.0" prefWidth="27.0" text="Rate" GridPane.columnIndex="2" />
-            <Label prefHeight="17.0" prefWidth="97.0" text="Start Date" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="97.0" text="Start Date" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <TextField fx:id="txtCarId" onAction="#txtClickOnAction" GridPane.columnIndex="1" />
             <TextField fx:id="TxtCustomerId" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtRate" GridPane.columnIndex="3" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="79.0" text="End Date" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="79.0" text="End Date" GridPane.rowIndex="2" />
             <DatePicker fx:id="endDate" prefHeight="25.0" prefWidth="197.0" promptText="Enter Date" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="txtBookingId" onAction="#txtIdClickOnAction" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Label text="Booking ID" GridPane.columnIndex="2" GridPane.rowIndex="2" />

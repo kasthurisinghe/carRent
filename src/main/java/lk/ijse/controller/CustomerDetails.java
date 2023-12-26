@@ -1,7 +1,10 @@
 package lk.ijse.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.db.DbConnection;
 import lk.ijse.dto.CreateCustomerDto;
 import lk.ijse.dto.tm.CreateCustomertm;
@@ -33,10 +36,38 @@ public class CustomerDetails {
     public TableColumn colCustomerId;
 
     public  void  initialize() throws SQLException {
-        loadAllCustomers();
+        setCellValueFactory();
+        List<CreateCustomerDto> createCustomerDtos = loadAllCustomers();
+        
+        setTableData(createCustomerDtos);
     }
 
-    private void loadAllCustomers() throws SQLException {
+    private void setTableData(List<CreateCustomerDto> createCustomerDtos) {
+        ObservableList<CreateCustomertm> objects = FXCollections.observableArrayList();
+
+        for (CreateCustomerDto createCustomerDto:createCustomerDtos){
+            var tm = new CreateCustomertm(
+                    createCustomerDto.getCstId(),
+                    createCustomerDto.getCustomerName(),
+                    createCustomerDto.getCustomerAddress(),
+                    createCustomerDto.getCustomerNic(),
+                    createCustomerDto.getCustomerMobile()
+            );
+            objects.add(tm);
+            tblCustomer.setItems(objects);
+        }
+    }
+
+    private void setCellValueFactory() {
+        colCustomerId.setCellValueFactory(new PropertyValueFactory<>("custId"));
+        colCustomername.setCellValueFactory(new PropertyValueFactory<>("custName"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("custAddr"));
+        colNic.setCellValueFactory(new PropertyValueFactory<>("custNic"));
+        colMobile.setCellValueFactory(new PropertyValueFactory<>("custMobile"));
+
+    }
+
+    private List<CreateCustomerDto> loadAllCustomers() throws SQLException {
         Connection connection=DbConnection.getInstance().getConnection();
 
         String sql="SELECT*FROM customer";
@@ -57,9 +88,7 @@ public class CustomerDetails {
 
             customerList.add(createCustomerDto);
         }
-        for (CreateCustomerDto customer:customerList){
-            System.out.println(customer);
-        }
+        return customerList;
     }
 
 //    private void loadAllCustomers() throws SQLException {

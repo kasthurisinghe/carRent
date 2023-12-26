@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class CreateCustomertm {
-
+    private String custId;
     private String custName;
     private String custAddr;
-    private String custMobile;
     private String custNic;
-    private String custRentedVehicles;
+    private String custMobile;
+
 
 }
